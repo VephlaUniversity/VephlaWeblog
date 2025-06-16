@@ -1,10 +1,10 @@
 import ArticleLayout from "./ArticleLayout";
 
-const AiCopilotsArticle = () => {
+const AiTrendArticle = () => {
   const breadcrumbs = [
     { label: "Homepage", href: "/" },
-    { label: "Blog", href: "/careers" },
-    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/trends" },
+    { label: "Trends", href: "/trends" },
   ];
 
   return (
@@ -147,4 +147,4 @@ const AiCopilotsArticle = () => {
   );
 };
 
-export default AiCopilotsArticle;
+export default AiTrendArticle;

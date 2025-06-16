@@ -100,7 +100,7 @@ const ReviewsBlog = () => {
               Blog
             </Link>
             <span className="text-gray-600">›</span>
-            <span className="text-white">Careers</span>
+            <span className="text-white">Reviews</span>
           </div>
         </nav>
 

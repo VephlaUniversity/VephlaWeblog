@@ -19,6 +19,7 @@ import DigitalMinimalismArticle from "./components/articles/DigitalMinimalismArt
 import ReactBeginnerGuideArticle from "./components/articles/ReactBeginnerGuideArticle";
 import EdgeComputingArticle from "./components/articles/EdgeComputingArticle";
 import NotionVsObsidianArticle from "./components/articles/NotionVsObsidianArticle";
+import AiTrendArticle from "./components/AiTrendArticle";
 
 function App() {
   const location = useLocation();
@@ -67,6 +68,7 @@ function App() {
 
         {/* Trend Articles */}
         <Route path="/edge-computing-2025" element={<EdgeComputingArticle />} />
+        <Route path="/ai-trends" element={<AiTrendArticle />} />
 
         {/* Review Articles */}
         <Route

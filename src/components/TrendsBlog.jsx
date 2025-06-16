@@ -26,7 +26,7 @@ const TrendsBlog = () => {
       image:
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop&crop=center",
       categoryColor: "text-red-400",
-      link: "/ai-co-pilots",
+      link: "/ai-trends",
     },
     {
       id: 3,
@@ -100,7 +100,7 @@ const TrendsBlog = () => {
               Blog
             </Link>
             <span className="text-gray-600">›</span>
-            <span className="text-white">Careers</span>
+            <span className="text-white">Trends</span>
           </div>
         </nav>
 

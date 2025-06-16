@@ -92,7 +92,7 @@ export const Main = () => {
 
       {/* Main Content Grid */}
       <main className="px-6 lg:px-8 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {cardData.map((card, index) => (
             <div key={index} className="relative rounded-2xl p-6 lg:p-2 ">
               {/* Card Content */}
@@ -100,7 +100,7 @@ export const Main = () => {
                 {/* Icon/Visual Element */}
                 <div className="mb-6 lg:mb-8 w-full">
                   <Link to={card.link}>
-                    <div className="w-full h-48 lg:h-56 rounded-xl bg-[#1b1b1b] flex items-center justify-center overflow-hidden hover:scale-[1.05] transition-all duration-300 cursor-pointer">
+                    <div className="w-full h-56 lg:h-56 rounded-xl bg-[#1b1b1b] flex items-center justify-center overflow-hidden hover:scale-[1.05] transition-all duration-300 cursor-pointer">
                       <img
                         src={card.icon}
                         alt={`${card.category} icon`}
