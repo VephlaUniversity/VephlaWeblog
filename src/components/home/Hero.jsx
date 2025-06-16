@@ -1,23 +1,17 @@
-import { useState } from "react";
-import { Search, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Main } from "./Main";
-
 export const Hero = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [activeTab, setActiveTab] = useState("All");
-
-  const tabs = [
-    "All",
-    "Tutorials",
-    "Reviews",
-    "Trends",
-    "Founders",
-    "Lifestyle",
-    "Careers",
-  ];
-
   return (
-    <div className="min-h-screen bg-[#0d0d0d] text-white">
+    <div className="min-h-screen bg-[#0d0d0d] text-white relative">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hero.png')",
+        }}
+      >
+        {/* Dark Overlay to maintain readability */}
+        <div className="absolute inset-0 bg-[#0d0d0d]/50"></div>
+      </div>
+
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-end justify-center px-4 overflow-hidden">
         {/* Content */}
@@ -39,7 +33,7 @@ export const Hero = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-[#1b1b1b] border border-gray-700 rounded-lg focus:outline-none focus:border-gray-600 text-white placeholder-gray-400 backdrop-blur-sm"
+              className="flex-1 px-6 py-4 bg-[#1b1b1b]/90 border border-gray-700 rounded-lg focus:outline-none focus:border-gray-600 text-white placeholder-gray-400 backdrop-blur-sm"
             />
             <button className="px-8 py-4 bg-red-500 hover:bg-red-700 rounded-lg font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer">
               Get Vephla Daily
@@ -47,13 +41,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <Main
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        tabs={tabs}
-      />
     </div>
   );
 };

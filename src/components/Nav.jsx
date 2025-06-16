@@ -1,4 +1,4 @@
-import logo from "/src/assets/images/logo.png";
+import logo from "/logo.png";
 import { useState } from "react";
 import {
   Menu,

@@ -1,9 +1,9 @@
-import { Hero } from "./home/Hero";
+import { Main } from "./home/Main";
 
 export const Home = () => {
   return (
     <>
-      <Hero />
+      <Main />
     </>
   );
 };
