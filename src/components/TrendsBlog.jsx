@@ -41,12 +41,16 @@ const TrendsBlog = () => {
     },
   ];
 
+  // Filter articles based on search term including category
   const filteredArticles = useMemo(() => {
     if (searchTerm.trim()) {
       return articles.filter(
         (article) =>
           article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          article.description.toLowerCase().includes(searchTerm.toLowerCase())
+          article.description
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          article.category.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
     return articles;
@@ -78,6 +82,26 @@ const TrendsBlog = () => {
         </div>
       </div>
     </Link>
+  );
+
+  const NotFoundMessage = () => (
+    <div className="flex flex-col items-center justify-center py-16 text-center">
+      <div className="w-24 h-24 mb-6 rounded-full bg-gray-800/50 flex items-center justify-center">
+        <Search className="w-10 h-10 text-gray-500" />
+      </div>
+      <h3 className="text-2xl font-semibold text-white mb-3">
+        No articles found
+      </h3>
+      <p className="text-gray-400 max-w-md">
+        We couldn't find any articles matching "{searchTerm}".
+      </p>
+      <button
+        onClick={() => setSearchTerm("")}
+        className="mt-6 px-6 py-2 bg-red-500 hover:bg-red-700 text-white rounded-lg transition-colors"
+      >
+        Clear search
+      </button>
+    </div>
   );
 
   return (
@@ -138,11 +162,27 @@ const TrendsBlog = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
+        {/* Results count */}
+        {searchTerm && (
+          <div className="mb-6">
+            <p className="text-gray-400 text-sm">
+              {filteredArticles.length} article
+              {filteredArticles.length !== 1 ? "s" : ""} found
+              {searchTerm && ` for "${searchTerm}"`}
+            </p>
+          </div>
+        )}
+
+        {/* Articles Grid or Not Found Message */}
+        {filteredArticles.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredArticles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+          </div>
+        ) : (
+          <NotFoundMessage />
+        )}
       </div>
     </div>
   );

@@ -40,38 +40,38 @@ export const Nav = () => {
       title: "ENERGY INVESTMENT ADVISORY",
       description:
         "Investment portfolios in oil & gas, with strategic guidance",
-      link: "/energy",
+      link: "https://vephla.com/energy",
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "TECH EDUCATION (VEPHLA UNI)",
       description: "Learn UI/UX, Data, Cybersecurity, Frontend & more",
-      link: "/vephlauni",
+      link: "https://vephla.com/vephlauni",
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "LURNER",
       description: "Buy innovative self-growth books and learning materials",
-      link: "/lurner",
+      link: "https://vephla.com/lurner",
     },
     {
       icon: <Command className="w-6 h-6" />,
       title: "SOFTWARE & DATA SOLUTIONS",
       description: "Build custom software, platforms, and analytics tools",
-      link: "/solution",
+      link: "https://vephla.com/solution",
     },
 
     {
       icon: <LucideShoppingBag className="w-6 h-6" />,
       title: "PRINTMLX (PREMIUM PRINTING)",
       description: "Order high-quality merch, packaging, and branded prints",
-      link: "/printmlx",
+      link: "https://vephla.com/printmlx",
     },
     {
       icon: <CopySlashIcon className="w-6 h-6" />,
       title: "VEPHLA WEBLOG",
       description: "Read articles, product updates, and student projects",
-      link: "/weblog",
+      link: "https://vephla.com/weblog",
     },
   ];
 

@@ -20,6 +20,16 @@ import ReactBeginnerGuideArticle from "./components/articles/ReactBeginnerGuideA
 import EdgeComputingArticle from "./components/articles/EdgeComputingArticle";
 import NotionVsObsidianArticle from "./components/articles/NotionVsObsidianArticle";
 import AiTrendArticle from "./components/AiTrendArticle";
+import MacBookVsThinkPadArticle from "./components/articles/MacBookVsThinkPadArticle";
+import WorkLifeBalanceArticle from "./components/articles/WorkLifeBalanceArticle";
+import WebAssemblyFutureArticle from "./components/articles/WebAssemblyFutureArticle";
+import ReactTaskManagerArticle from "./components/articles/ReactTaskManagerArticle";
+import TeamflowJourneyArticle from "./components/articles/TeamflowJourneyArticle";
+import CSSGridMasteryArticle from "./components/articles/CSSGridMasteryArticle";
+import TransitionIntoTechArticle from "./components/articles/TransitionIntoTechArticle";
+import VSCodeExtensionsArticle from "./components/articles/VSCodeExtensionsArticle";
+import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
+import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
 
 function App() {
   const location = useLocation();
@@ -46,34 +56,77 @@ function App() {
           element={<NetworkingDevOpsArticle />}
         />
         <Route path="/living-the-remote-life" element={<RemoteLifeArticle />} />
-
-        {/* Founder Articles */}
         <Route path="/zero-to-1m-arr" element={<ZeroToArrArticle />} />
         <Route
           path="/first-round-funding"
           element={<FirstRoundFundingArticle />}
         />
 
-        {/* Lifestyle Articles */}
         <Route
           path="/digital-minimalism"
           element={<DigitalMinimalismArticle />}
         />
 
-        {/* Tutorial Articles */}
         <Route
           path="/react-beginner-guide"
           element={<ReactBeginnerGuideArticle />}
         />
 
-        {/* Trend Articles */}
         <Route path="/edge-computing-2025" element={<EdgeComputingArticle />} />
         <Route path="/ai-trends" element={<AiTrendArticle />} />
 
-        {/* Review Articles */}
         <Route
           path="/notion-vs-obsidian"
           element={<NotionVsObsidianArticle />}
+        />
+
+        <Route
+          path="/macbook-vs-thinkpad-dev"
+          element={<MacBookVsThinkPadArticle />}
+        />
+        <Route
+          path="/work-life-balance-remote"
+          element={<WorkLifeBalanceArticle />}
+        />
+        <Route
+          path="/webassembly-future"
+          element={<WebAssemblyFutureArticle />}
+        />
+        <Route
+          path="/react-task-manager"
+          element={<ReactTaskManagerArticle />}
+        />
+        <Route path="/teamflow-journey" element={<TeamflowJourneyArticle />} />
+        <Route path="/css-grid-mastery" element={<CSSGridMasteryArticle />} />
+        <Route
+          path="/transition-into-tech"
+          element={<TransitionIntoTechArticle />}
+        />
+        <Route
+          path="/vscode-extensions-2025"
+          element={<VSCodeExtensionsArticle />}
+        />
+        <Route
+          path="/macbook-vs-thinkpad-dev"
+          element={<MacBookVsThinkPadArticle />}
+        />
+        <Route path="/nodejs-api-development" element={<NodeJSAPIArticle />} />
+        <Route path="/mvp-mistakes" element={<MVPMistakesArticle />} />
+
+        {/* Catch-all for 404 */}
+        <Route
+          path="*"
+          element={
+            <div className="flex items-center justify-center h-screen text-gray-500">
+              <h1 className="text-3xl font-bold">Page Not Found</h1>
+              <button
+                onClick={() => (window.location.href = "/")}
+                className="ml-4 px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded transition-colors"
+              >
+                Go to Homepage
+              </button>
+            </div>
+          }
         />
       </Routes>
       {!hideFooter && <Footer />}
