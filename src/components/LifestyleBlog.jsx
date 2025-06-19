@@ -1,6 +1,7 @@
 import { Search, ArrowUpRight } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { AnimatedPage } from "../AnimatedPage";
 
 const LifestyleBlog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -94,86 +95,88 @@ const LifestyleBlog = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className=" text-white overflow-hidden mt-12 py-4">
-        {/* Navigation */}
-        <nav className="flex items-center justify-center pt-6 pb-4 px-4 sm:pt-8 sm:pb-6">
-          <div className="flex items-center space-x-2 sm:space-x-4 text-gray-400 text-sm sm:text-base">
-            <Link
-              to="/"
-              className="hover:text-white transition-colors duration-200"
-            >
-              Homepage
-            </Link>
-            <span className="text-gray-600">›</span>
-            <Link
-              to="/"
-              className="hover:text-white transition-colors duration-200"
-            >
-              Blog
-            </Link>
-            <span className="text-gray-600">›</span>
-            <span className="text-white">Lifestyle</span>
-          </div>
-        </nav>
+    <AnimatedPage>
+      <div className="min-h-screen bg-background">
+        <div className=" text-white overflow-hidden mt-12 py-4">
+          {/* Navigation */}
+          <nav className="flex items-center justify-center pt-6 pb-4 px-4 sm:pt-8 sm:pb-6">
+            <div className="flex items-center space-x-2 sm:space-x-4 text-gray-400 text-sm sm:text-base">
+              <Link
+                to="/"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Homepage
+              </Link>
+              <span className="text-gray-600">›</span>
+              <Link
+                to="/"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Blog
+              </Link>
+              <span className="text-gray-600">›</span>
+              <span className="text-white">Lifestyle</span>
+            </div>
+          </nav>
 
-        <div className="flex flex-col items-center justify-center px-4 lg:px-16">
-          {/* Heading */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 tracking-tight leading-tight max-w-6xl">
-            Lifestyle That Works for You
-          </h1>
+          <div className="flex flex-col items-center justify-center px-4 lg:px-16">
+            {/* Heading */}
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 tracking-tight leading-tight max-w-6xl">
+              Lifestyle That Works for You
+            </h1>
 
-          <div className="flex items-center justify-center w-[70%] pb-16">
-            <div className="relative">
-              <img
-                src="11.png"
-                alt="category-image"
-                className="w-full object-contain  drop-shadow-2xl"
-              />
+            <div className="flex items-center justify-center w-[70%] pb-16">
+              <div className="relative">
+                <img
+                  src="11.png"
+                  alt="category-image"
+                  className="w-full object-contain  drop-shadow-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 lg:mb-0 text-white">
-            Lifestyle & Balance
-          </h2>
-          <div className="relative max-w-md w-full lg:w-auto">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 z-10" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-6 py-3 bg-[#1b1b1b] border border-gray-700 rounded-lg focus:outline-none focus:border-gray-600 text-white placeholder-gray-400 backdrop-blur-sm"
-            />
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 lg:mb-0 text-white">
+              Lifestyle & Balance
+            </h2>
+            <div className="relative max-w-md w-full lg:w-auto">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 z-10" />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-6 py-3 bg-[#1b1b1b] border border-gray-700 rounded-lg focus:outline-none focus:border-gray-600 text-white placeholder-gray-400 backdrop-blur-sm"
+              />
+            </div>
           </div>
+
+          {/* Results count */}
+          {searchTerm && (
+            <div className="mb-6">
+              <p className="text-gray-400 text-sm">
+                {filteredArticles.length} article
+                {filteredArticles.length !== 1 ? "s" : ""} found
+                {searchTerm && ` for "${searchTerm}"`}
+              </p>
+            </div>
+          )}
+
+          {/* Articles Grid or Not Found Message */}
+          {filteredArticles.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.map((article) => (
+                <ArticleCard key={article.id} article={article} />
+              ))}
+            </div>
+          ) : (
+            <NotFoundMessage />
+          )}
         </div>
-
-        {/* Results count */}
-        {searchTerm && (
-          <div className="mb-6">
-            <p className="text-gray-400 text-sm">
-              {filteredArticles.length} article
-              {filteredArticles.length !== 1 ? "s" : ""} found
-              {searchTerm && ` for "${searchTerm}"`}
-            </p>
-          </div>
-        )}
-
-        {/* Articles Grid or Not Found Message */}
-        {filteredArticles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-        ) : (
-          <NotFoundMessage />
-        )}
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

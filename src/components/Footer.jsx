@@ -14,7 +14,7 @@ export const Footer = () => {
             <ul className="space-y-2 md:space-y-4">
               <li>
                 <Link
-                  to="/"
+                  to="/news-blog"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Home
@@ -63,7 +63,7 @@ export const Footer = () => {
             <ul className="space-y-2 md:space-y-4">
               <li>
                 <Link
-                  to="https://vephla.com/energy"
+                  to="http://energies.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Energy Investments
@@ -71,7 +71,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="https://vephla.com/vephlauni"
+                  to="http://university.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Vephla University
@@ -79,7 +79,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="https://vephla.com/printmlx"
+                  to="/printmlx"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   PrintMLX
@@ -87,7 +87,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="https://vephla.com/lurner"
+                  to="http://lurner.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Lumer
@@ -95,7 +95,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="https://vephla.com/qnduit"
+                  to="http://qnduit.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Qnduit
@@ -103,7 +103,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="https://vephla.com/weblog"
+                  to="/"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Tech Weblog

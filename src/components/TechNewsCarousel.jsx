@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedPage } from "../AnimatedPage";
 
 const TechNewsCarousel = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -253,80 +254,82 @@ const TechNewsCarousel = () => {
   };
 
   return (
-    <div className="bg-[#0d0d0d] text-white p-6 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">More from Tech News</h1>
-          <Link to="/">
-            <button className="text-red-500 hover:text-red-400 transition-colors cursor-pointer">
-              View all
-            </button>
-          </Link>
-        </div>
-
-        {/* Carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {getVisibleArticles().map((article) => (
-            <div
-              key={article.id}
-              className="rounded-lg overflow-hidden cursor-pointer group"
-            >
-              <div className="relative overflow-hidden rounded-xl bg-[#0d0d0d] backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
-                <div className="aspect-video relative overflow-hidden">
-                  <div className="absolute inset-0">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute bottom-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <ArrowUpRight className="w-4 h-4 text-white" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div
-                    className={`text-sm font-medium mb-3 ${article.categoryColor}`}
-                  >
-                    {article.category}
-                  </div>
-                  <h3 className="text-white text-xl font-semibold mb-3 group-hover:text-gray-200 transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {article.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation */}
-        <div className="flex items-center justify-between">
-          <button
-            onClick={goToPrevious}
-            className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
-          >
-            <ChevronLeft className="w-5 h-5" />
-            <span>Previous</span>
-          </button>
-
-          <div className="flex items-center space-x-2">
-            {renderPaginationDots()}
+    <AnimatedPage>
+      <div className="bg-[#0d0d0d] text-white p-6 min-h-screen">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-8">
+            <h1 className="text-3xl font-bold">More from Tech News</h1>
+            <Link to="/">
+              <button className="text-red-500 hover:text-red-400 transition-colors cursor-pointer">
+                View all
+              </button>
+            </Link>
           </div>
 
-          <button
-            onClick={goToNext}
-            className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
-          >
-            <span>Next</span>
-            <ChevronRight className="w-5 h-5" />
-          </button>
+          {/* Carousel */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {getVisibleArticles().map((article) => (
+              <div
+                key={article.id}
+                className="rounded-lg overflow-hidden cursor-pointer group"
+              >
+                <div className="relative overflow-hidden rounded-xl bg-[#0d0d0d] backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
+                  <div className="aspect-video relative overflow-hidden">
+                    <div className="absolute inset-0">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute bottom-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <ArrowUpRight className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div
+                      className={`text-sm font-medium mb-3 ${article.categoryColor}`}
+                    >
+                      {article.category}
+                    </div>
+                    <h3 className="text-white text-xl font-semibold mb-3 group-hover:text-gray-200 transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {article.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between">
+            <button
+              onClick={goToPrevious}
+              className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous</span>
+            </button>
+
+            <div className="flex items-center space-x-2">
+              {renderPaginationDots()}
+            </div>
+
+            <button
+              onClick={goToNext}
+              className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+            >
+              <span>Next</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 };
 

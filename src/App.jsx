@@ -30,17 +30,20 @@ import TransitionIntoTechArticle from "./components/articles/TransitionIntoTechA
 import VSCodeExtensionsArticle from "./components/articles/VSCodeExtensionsArticle";
 import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
+import { Weblog } from "./components/Weblog";
 
 function App() {
   const location = useLocation();
-  const hideFooter = location.pathname === "/contact";
+  const hideFooterPaths = ["/contact", "/"];
+  const hideFooter = hideFooterPaths.includes(location.pathname);
 
   return (
     <>
       <Nav />
       <Routes>
+        <Route path="/" element={<Weblog />}></Route>
         <Route path="/contact" element={<ContactPage />}></Route>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/news-blog" element={<Home />}></Route>
         {/* Category Pages */}
         <Route path="/careers" element={<CareersBlog />} />
         <Route path="/founders" element={<FoundersBlog />} />

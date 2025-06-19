@@ -1,9 +1,12 @@
+import { AnimatedPage } from "../AnimatedPage";
 import { Main } from "./home/Main";
 
 export const Home = () => {
   return (
     <>
-      <Main />
+      <AnimatedPage>
+        <Main />
+      </AnimatedPage>
     </>
   );
 };
