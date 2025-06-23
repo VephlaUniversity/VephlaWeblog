@@ -31,6 +31,7 @@ import VSCodeExtensionsArticle from "./components/articles/VSCodeExtensionsArtic
 import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
 import { Weblog } from "./components/Weblog";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
@@ -40,98 +41,112 @@ function App() {
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Weblog />}></Route>
-        <Route path="/contact" element={<ContactPage />}></Route>
-        <Route path="/news-blog" element={<Home />}></Route>
-        {/* Category Pages */}
-        <Route path="/careers" element={<CareersBlog />} />
-        <Route path="/founders" element={<FoundersBlog />} />
-        <Route path="/lifestyle" element={<LifestyleBlog />} />
-        <Route path="/tutorials" element={<TutorialsBlog />} />
-        <Route path="/trends" element={<TrendsBlog />} />
-        <Route path="/reviews" element={<ReviewsBlog />} />
+      <AnimatePresence exitBeforeEnter>
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<Weblog />}></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/news-blog" element={<Home />}></Route>
+          {/* Category Pages */}
+          <Route path="/careers" element={<CareersBlog />} />
+          <Route path="/founders" element={<FoundersBlog />} />
+          <Route path="/lifestyle" element={<LifestyleBlog />} />
+          <Route path="/tutorials" element={<TutorialsBlog />} />
+          <Route path="/trends" element={<TrendsBlog />} />
+          <Route path="/reviews" element={<ReviewsBlog />} />
 
-        {/* Individual Articles */}
-        <Route path="/ai-co-pilots" element={<AiCopilotsArticle />} />
-        <Route
-          path="/networking-devops"
-          element={<NetworkingDevOpsArticle />}
-        />
-        <Route path="/living-the-remote-life" element={<RemoteLifeArticle />} />
-        <Route path="/zero-to-1m-arr" element={<ZeroToArrArticle />} />
-        <Route
-          path="/first-round-funding"
-          element={<FirstRoundFundingArticle />}
-        />
+          {/* Individual Articles */}
+          <Route path="/ai-co-pilots" element={<AiCopilotsArticle />} />
+          <Route
+            path="/networking-devops"
+            element={<NetworkingDevOpsArticle />}
+          />
+          <Route
+            path="/living-the-remote-life"
+            element={<RemoteLifeArticle />}
+          />
+          <Route path="/zero-to-1m-arr" element={<ZeroToArrArticle />} />
+          <Route
+            path="/first-round-funding"
+            element={<FirstRoundFundingArticle />}
+          />
 
-        <Route
-          path="/digital-minimalism"
-          element={<DigitalMinimalismArticle />}
-        />
+          <Route
+            path="/digital-minimalism"
+            element={<DigitalMinimalismArticle />}
+          />
 
-        <Route
-          path="/react-beginner-guide"
-          element={<ReactBeginnerGuideArticle />}
-        />
+          <Route
+            path="/react-beginner-guide"
+            element={<ReactBeginnerGuideArticle />}
+          />
 
-        <Route path="/edge-computing-2025" element={<EdgeComputingArticle />} />
-        <Route path="/ai-trends" element={<AiTrendArticle />} />
+          <Route
+            path="/edge-computing-2025"
+            element={<EdgeComputingArticle />}
+          />
+          <Route path="/ai-trends" element={<AiTrendArticle />} />
 
-        <Route
-          path="/notion-vs-obsidian"
-          element={<NotionVsObsidianArticle />}
-        />
+          <Route
+            path="/notion-vs-obsidian"
+            element={<NotionVsObsidianArticle />}
+          />
 
-        <Route
-          path="/macbook-vs-thinkpad-dev"
-          element={<MacBookVsThinkPadArticle />}
-        />
-        <Route
-          path="/work-life-balance-remote"
-          element={<WorkLifeBalanceArticle />}
-        />
-        <Route
-          path="/webassembly-future"
-          element={<WebAssemblyFutureArticle />}
-        />
-        <Route
-          path="/react-task-manager"
-          element={<ReactTaskManagerArticle />}
-        />
-        <Route path="/teamflow-journey" element={<TeamflowJourneyArticle />} />
-        <Route path="/css-grid-mastery" element={<CSSGridMasteryArticle />} />
-        <Route
-          path="/transition-into-tech"
-          element={<TransitionIntoTechArticle />}
-        />
-        <Route
-          path="/vscode-extensions-2025"
-          element={<VSCodeExtensionsArticle />}
-        />
-        <Route
-          path="/macbook-vs-thinkpad-dev"
-          element={<MacBookVsThinkPadArticle />}
-        />
-        <Route path="/nodejs-api-development" element={<NodeJSAPIArticle />} />
-        <Route path="/mvp-mistakes" element={<MVPMistakesArticle />} />
+          <Route
+            path="/macbook-vs-thinkpad-dev"
+            element={<MacBookVsThinkPadArticle />}
+          />
+          <Route
+            path="/work-life-balance-remote"
+            element={<WorkLifeBalanceArticle />}
+          />
+          <Route
+            path="/webassembly-future"
+            element={<WebAssemblyFutureArticle />}
+          />
+          <Route
+            path="/react-task-manager"
+            element={<ReactTaskManagerArticle />}
+          />
+          <Route
+            path="/teamflow-journey"
+            element={<TeamflowJourneyArticle />}
+          />
+          <Route path="/css-grid-mastery" element={<CSSGridMasteryArticle />} />
+          <Route
+            path="/transition-into-tech"
+            element={<TransitionIntoTechArticle />}
+          />
+          <Route
+            path="/vscode-extensions-2025"
+            element={<VSCodeExtensionsArticle />}
+          />
+          <Route
+            path="/macbook-vs-thinkpad-dev"
+            element={<MacBookVsThinkPadArticle />}
+          />
+          <Route
+            path="/nodejs-api-development"
+            element={<NodeJSAPIArticle />}
+          />
+          <Route path="/mvp-mistakes" element={<MVPMistakesArticle />} />
 
-        {/* Catch-all for 404 */}
-        <Route
-          path="*"
-          element={
-            <div className="flex items-center justify-center h-screen text-gray-500">
-              <h1 className="text-3xl font-bold">Page Not Found</h1>
-              <button
-                onClick={() => (window.location.href = "/")}
-                className="ml-4 px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded transition-colors"
-              >
-                Go to Homepage
-              </button>
-            </div>
-          }
-        />
-      </Routes>
+          {/* Catch-all for 404 */}
+          <Route
+            path="*"
+            element={
+              <div className="flex items-center justify-center h-screen text-gray-500">
+                <h1 className="text-3xl font-bold">Page Not Found</h1>
+                <button
+                  onClick={() => (window.location.href = "/")}
+                  className="ml-4 px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded transition-colors"
+                >
+                  Go to Homepage
+                </button>
+              </div>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
       {!hideFooter && <Footer />}
     </>
   );

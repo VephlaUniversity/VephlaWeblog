@@ -71,10 +71,9 @@ export const Nav = () => {
       icon: <CopySlashIcon className="w-6 h-6" />,
       title: "VEPHLA WEBLOG",
       description: "Read articles, product updates, and student projects",
-      link: "/",
+      link: "http://daily.vephla.com",
     },
   ];
-
   const careers = [
     {
       icon: <BookMarkedIcon className="w-6 h-6" />,
@@ -245,9 +244,11 @@ export const Nav = () => {
 
           {/* CTA Button - Hidden on medium screens and below */}
           <div className="hidden md:block">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
-              Explore our solutions
-            </button>
+            <a href="https://vephla.com/" target="_blank">
+              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
+                Explore our solutions
+              </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -305,8 +306,8 @@ export const Nav = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {solutions.map((solution, index) => (
                       <motion.div key={index} variants={itemVariants}>
-                        <Link
-                          to={solution.link}
+                        <a
+                          href={solution.link}
                           onClick={closeDropdowns}
                           className="flex items-start space-x-4 p-4 rounded-lg  transition-colors duration-200 cursor-pointer group"
                         >
@@ -326,7 +327,7 @@ export const Nav = () => {
                               {solution.description}
                             </p>
                           </div>
-                        </Link>
+                        </a>
                       </motion.div>
                     ))}
                   </div>
@@ -357,8 +358,8 @@ export const Nav = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {careers.map((career, index) => (
                       <motion.div key={index} variants={itemVariants}>
-                        <Link
-                          to={career.link}
+                        <a
+                          href={career.link}
                           onClick={closeDropdowns}
                           className="flex items-start space-x-4 p-4 rounded-lg transition-colors duration-200 cursor-pointer group"
                         >
@@ -378,7 +379,7 @@ export const Nav = () => {
                               {career.description}
                             </p>
                           </div>
-                        </Link>
+                        </a>
                       </motion.div>
                     ))}
                   </div>
@@ -430,8 +431,8 @@ export const Nav = () => {
                       </motion.div>
                       {solutions.map((solution, index) => (
                         <motion.div key={index} variants={itemVariants}>
-                          <Link
-                            to={solution.link}
+                          <a
+                            href={solution.link}
                             onClick={closeDropdowns}
                             className="flex items-start space-x-3 p-3 rounded-lg cursor-pointer transition-colors duration-200 group"
                           >
@@ -451,7 +452,7 @@ export const Nav = () => {
                                 {solution.description}
                               </p>
                             </div>
-                          </Link>
+                          </a>
                         </motion.div>
                       ))}
                     </motion.div>
@@ -489,8 +490,8 @@ export const Nav = () => {
                       </motion.div>
                       {careers.map((career, index) => (
                         <motion.div key={index} variants={itemVariants}>
-                          <Link
-                            to={career.link}
+                          <a
+                            href={career.link}
                             onClick={closeDropdowns}
                             className="flex items-start space-x-3 p-3 rounded-lg cursor-pointer transition-colors duration-200 group"
                           >
@@ -510,7 +511,7 @@ export const Nav = () => {
                                 {career.description}
                               </p>
                             </div>
-                          </Link>
+                          </a>
                         </motion.div>
                       ))}
                     </motion.div>
@@ -531,9 +532,11 @@ export const Nav = () => {
 
               {/* Mobile CTA Button */}
               <motion.div variants={itemVariants} className="px-3">
-                <button className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
-                  Explore our solutions
-                </button>
+                <a href="https://vephla.com/" target="_blank">
+                  <button className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
+                    Explore our solutions
+                  </button>
+                </a>
               </motion.div>
             </div>
           </motion.div>
