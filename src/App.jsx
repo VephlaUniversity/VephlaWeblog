@@ -32,6 +32,9 @@ import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
+import { TermsAndService } from "./components/Terms";
+import { PrivacyPolicy } from "./components/Privacy";
+import { About } from "./components/about/About";
 
 function App() {
   const location = useLocation();
@@ -46,6 +49,9 @@ function App() {
           <Route path="/" element={<Weblog />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/news-blog" element={<Home />}></Route>
+          <Route path="/terms" element={<TermsAndService />}></Route>
+          <Route path="/privacy" element={<PrivacyPolicy />}></Route>
+          <Route path="/about" element={<About />}></Route>
           {/* Category Pages */}
           <Route path="/careers" element={<CareersBlog />} />
           <Route path="/founders" element={<FoundersBlog />} />

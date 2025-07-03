@@ -21,21 +21,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/#about"
+                <Link
+                  to="/about"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
-                >
-                  Careers
-                </a>
-              </li>
+
               <li>
                 <Link
                   to="/contact"
@@ -63,6 +56,7 @@ export const Footer = () => {
             <ul className="space-y-2 md:space-y-4">
               <li>
                 <a
+                  target="_blank"
                   href="http://energies.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
@@ -71,6 +65,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  target="_blank"
                   href="http://university.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
@@ -79,6 +74,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  target="_blank"
                   href="/printmlx"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
@@ -87,6 +83,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  target="_blank"
                   href="http://lurner.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
@@ -95,6 +92,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  target="_blank"
                   href="http://qnduit.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
@@ -102,12 +100,30 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to="/"
+                <a
+                  href="https://daily.vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Tech Weblog
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://zcriptta.vephla.com"
+                  className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
+                >
+                  Software & Data Solutions
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://vncx.vephla.com"
+                  className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
+                >
+                  VNCX
+                </a>
               </li>
             </ul>
           </div>
@@ -120,7 +136,7 @@ export const Footer = () => {
             <ul className="space-y-2 md:space-y-4">
               <li>
                 <a
-                  href="https://x.com/VephlaHQ"
+                  href="https://x.com/vephlaGroup"
                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm md:text-base"
                 >
                   Twitter <ExternalLink size={12} className="md:w-4 md:h-4" />
@@ -136,7 +152,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/school/vephlagroup/"
+                  href="https://www.linkedin.com/company/vephla-group-hq"
                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm md:text-base"
                 >
                   LinkedIn <ExternalLink size={12} className="md:w-4 md:h-4" />
@@ -144,7 +160,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.facebook.com/Vephlauniversity/"
+                  href="https://www.facebook.com/Vephlauniversity"
                   className="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm md:text-base"
                 >
                   Facebook <ExternalLink size={12} className="md:w-4 md:h-4" />
@@ -211,18 +227,18 @@ export const Footer = () => {
               © 2025 Vephla Group
             </p>
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-center sm:text-left">
-              <a
-                href="#"
+              <Link
+                to="/terms"
                 className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm"
               >
                 Terms & Service
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/privacy"
                 className="text-gray-400 hover:text-white transition-colors text-xs md:text-sm"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
