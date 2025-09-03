@@ -1,4 +1,4 @@
-import { ArrowRight, PhoneCallIcon, Mails } from "lucide-react";
+import { ArrowRight, Phone, Mails } from "lucide-react";
 import { useState } from "react";
 import { AnimatedPage } from "../../AnimatedPage";
 
@@ -9,6 +9,7 @@ export const ContactPage = () => {
     phone: "",
     message: "",
     services: [],
+    otherService: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -53,6 +54,11 @@ export const ContactPage = () => {
       newErrors.services = "Please select at least one service";
     }
 
+    // Validate other service input if "Other" is selected
+    if (formData.services.includes("Other") && !formData.otherService.trim()) {
+      newErrors.otherService = "Please specify the other service";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -73,12 +79,23 @@ export const ContactPage = () => {
   };
 
   const handleServiceChange = (service) => {
-    setFormData((prev) => ({
-      ...prev,
-      services: prev.services.includes(service)
+    setFormData((prev) => {
+      const newServices = prev.services.includes(service)
         ? prev.services.filter((s) => s !== service)
-        : [...prev.services, service],
-    }));
+        : [...prev.services, service];
+
+      // Clear otherService if "Other" is unchecked
+      const newOtherService =
+        service === "Other" && !newServices.includes("Other")
+          ? ""
+          : prev.otherService;
+
+      return {
+        ...prev,
+        services: newServices,
+        otherService: newOtherService,
+      };
+    });
 
     if (errors.services) {
       setErrors((prev) => ({
@@ -88,26 +105,53 @@ export const ContactPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      alert("Message sent successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        services: [],
-      });
-      setIsSubmitting(false);
-    }, 1000);
+    try {
+      const response = await fetch(
+        "https://daily.vephla.com/backend/contact.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            services: formData.services,
+            otherService: formData.otherService,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          services: [],
+          otherService: "",
+        });
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (err) {
+      console.error("Submit error:", err);
+      alert("An unexpected error occurred.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -137,14 +181,21 @@ export const ContactPage = () => {
                     className="inline-flex items-center text-white hover:text-red-400 transition-colors underline"
                   >
                     Hello@vephlagroup.com <Mails className="w-5 h-5 ml-2" />
-                  </a>{" "}
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:Emicentre0@gmail.com"
+                    className="inline-flex items-center text-white hover:text-red-400 transition-colors underline"
+                  >
+                    Emicentre0@gmail.com <Mails className="w-5 h-5 ml-2" />
+                  </a>
                   <br />
                   <a
                     href="tel:+234-701-361-7059"
                     className="inline-flex items-center text-white hover:text-red-400 transition-colors underline"
                   >
                     +234-701-361-7059
-                    <PhoneCallIcon className="w-5 h-5 ml-2" />
+                    <Phone className="w-5 h-5 ml-2" />
                   </a>
                 </div>
               </div>
@@ -206,7 +257,7 @@ export const ContactPage = () => {
                 </p>
               </div>
 
-              {/* Right Column - Form */}
+              {/*  Form */}
               <div>
                 <div className="space-y-6">
                   {/* Services Selection */}
@@ -236,6 +287,29 @@ export const ContactPage = () => {
                       <p className="text-red-400 text-sm mt-2">
                         {errors.services}
                       </p>
+                    )}
+
+                    {/* Other Service Input - Shows when "Other" is selected */}
+                    {formData.services.includes("Other") && (
+                      <div className="mt-4">
+                        <input
+                          type="text"
+                          name="otherService"
+                          value={formData.otherService}
+                          onChange={handleInputChange}
+                          placeholder="Please specify the service you're interested in"
+                          className={`w-full px-4 py-3 bg-[#1b1b1b] border ${
+                            errors.otherService
+                              ? "border-red-400"
+                              : "border-gray-600"
+                          } rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 transition-colors`}
+                        />
+                        {errors.otherService && (
+                          <p className="text-red-400 text-sm mt-1">
+                            {errors.otherService}
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
 
