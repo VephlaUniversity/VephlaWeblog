@@ -13,6 +13,11 @@ export const Hero = () => {
   };
 
   const handleSubmit = () => {
+    if (!email.trim()) {
+      alert("Please enter an email address.");
+      return;
+    }
+
     setIsLoading(true);
 
     // Simulate API call delay
@@ -22,11 +27,11 @@ export const Hero = () => {
       setIsLoading(false);
       setShowModal(true);
 
-      // Auto close modal after 3 seconds
-      setTimeout(() => {
-        setShowModal(false);
-      }, 3000);
-    }, 1500); // 1.5 second loading simulation
+      if (isValid) {
+        console.log("Subscribed with email:", email.trim());
+        setEmail("");
+      }
+    }, 1500);
   };
 
   const closeModal = () => {
