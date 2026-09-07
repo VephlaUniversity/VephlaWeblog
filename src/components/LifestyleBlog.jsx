@@ -109,7 +109,7 @@ const LifestyleBlog = () => {
               </Link>
               <span className="text-gray-600">›</span>
               <Link
-                to="/"
+                to="/news-blog"
                 className="hover:text-white transition-colors duration-200"
               >
                 Blog

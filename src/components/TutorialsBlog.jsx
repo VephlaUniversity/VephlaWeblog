@@ -7,6 +7,16 @@ const TutorialsBlog = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const articles = [
+      {
+      id: 4,
+      category: "Tutorials",
+      title: "How to Set Up a Project Management Portfolio That Gets ...",
+      description:
+        "Your CV tells people where you've worked. Your portfolio shows them how you actually think, plan, and deliver projects. Here's how to build...",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop&crop=center",
+      categoryColor: "text-cyan-400",
+      link: "/project-management-portfolio",
+    },
     {
       id: 1,
       category: "Tutorials",
@@ -120,7 +130,7 @@ const TutorialsBlog = () => {
               </Link>
               <span className="text-gray-600">›</span>
               <Link
-                to="/"
+                to="/news-blog"
                 className="hover:text-white transition-colors duration-200"
               >
                 Blog

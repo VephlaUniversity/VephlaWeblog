@@ -1,4 +1,4 @@
-import logo from "/logo.png";
+import logo from "/favicon.png";
 import { useState } from "react";
 import {
   Menu,
@@ -140,7 +140,7 @@ export const Nav = () => {
       icon: <BadgePlus className="w-6 h-6" />,
       title: "VACANCIES",
       description: "We're hiring—come aboard!",
-      link: "/vacancies",
+      link: "https://vephla.com/vacancies",
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -243,12 +243,22 @@ export const Nav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <div className="flex items-center justify-center">
-                <Link to="https://vephla.com" onClick={closeDropdowns}>
-                  <img src={logo} alt="" />
-                </Link>
+              <div>
+                <a
+                  className="flex  items-center justify-center gap-0.5"
+                  href="https://vephla.com"
+                  onClick={closeDropdowns}
+                >
+                  <img className="w-[40px]" src={logo} alt="logo" />
+                  <div className="flex flex-col text-[10px] leading-2.5">
+                    <span className="font-extrabold">Vephla</span>
+                    <span className="font-extralight text-[0.58rem]">
+                      Group LLC
+                    </span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -317,14 +327,15 @@ export const Nav = () => {
               </div>
 
               {/* About Us */}
-              <Link
-                to="https://vephla.com/about"
+              <a
+                href="https://vephla.com/about"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer"
                 onClick={closeDropdowns}
               >
                 About Us
-              </Link>
+              </a>
 
               {/* Contact Us */}
               <Link
@@ -339,7 +350,7 @@ export const Nav = () => {
 
           {/* CTA Button - Hidden on medium screens and below */}
           <div className="hidden md:block">
-            <a href="https://vephla.com" target="_blank">
+            <a href="https://vephla.com" target="_blank" rel="noopener noreferrer">
               <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
                 Explore our solutions
               </button>
@@ -505,8 +516,8 @@ export const Nav = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {staff.map((item, index) => (
                       <motion.div key={index} variants={itemVariants}>
-                        <Link
-                          to={item.link}
+                        <a
+                          href={item.link}
                           onClick={closeDropdowns}
                           className="flex items-start space-x-4 p-4 rounded-lg transition-colors duration-200 cursor-pointer group"
                         >
@@ -526,7 +537,7 @@ export const Nav = () => {
                               {item.description}
                             </p>
                           </div>
-                        </Link>
+                        </a>
                       </motion.div>
                     ))}
                   </div>
@@ -708,8 +719,8 @@ export const Nav = () => {
                       </motion.div>
                       {staff.map((item, index) => (
                         <motion.div key={index} variants={itemVariants}>
-                          <Link
-                            to={item.link}
+                          <a
+                            href={item.link}
                             onClick={closeDropdowns}
                             className="flex items-start space-x-3 p-3 rounded-lg cursor-pointer transition-colors duration-200 group"
                           >
@@ -729,7 +740,7 @@ export const Nav = () => {
                                 {item.description}
                               </p>
                             </div>
-                          </Link>
+                          </a>
                         </motion.div>
                       ))}
                     </motion.div>
@@ -739,14 +750,15 @@ export const Nav = () => {
 
               {/* About Us */}
               <motion.div variants={itemVariants} className="mb-8">
-                <Link
-                  to="https://vephla.com/about"
+                <a
+                  href="https://vephla.com/about"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white px-3 py-3 text-lg font-medium border-b border-gray-700"
                   onClick={closeDropdowns}
                 >
                   About Us
-                </Link>
+                </a>
               </motion.div>
               {/* Contact Us */}
               <motion.div variants={itemVariants} className="mb-8">
@@ -761,7 +773,7 @@ export const Nav = () => {
 
               {/* Mobile CTA Button */}
               <motion.div variants={itemVariants} className="px-3">
-                <a href="https://vephla.com" target="_blank">
+                <a href="https://vephla.com" target="_blank" rel="noopener noreferrer">
                   <button className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
                     Explore our solutions
                   </button>

@@ -86,7 +86,7 @@ const TechNewsCarousel = () => {
         "From GitHub Copilot to ChatGPT plugins, AI is no longer optional in the dev stack. This post unpacks the shift, w...",
       image: "/7.png",
       categoryColor: "text-purple-400",
-      link: "/ai-co-pilots-impact",
+      link: "/ai-co-pilots",
     },
     {
       id: 9,
@@ -270,9 +270,11 @@ const TechNewsCarousel = () => {
           {/* Carousel */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {getVisibleArticles().map((article) => (
-              <div
+              <Link
                 key={article.id}
-                className="rounded-lg overflow-hidden cursor-pointer group"
+                to={article.link}
+                onClick={() => window.scrollTo(0, 0)}
+                className="rounded-lg overflow-hidden cursor-pointer group block"
               >
                 <div className="relative overflow-hidden rounded-xl bg-[#0d0d0d] backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
                   <div className="aspect-video relative overflow-hidden">
@@ -301,7 +303,7 @@ const TechNewsCarousel = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

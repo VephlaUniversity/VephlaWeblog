@@ -13,20 +13,20 @@ export const Footer = () => {
             </h3>
             <ul className="space-y-2 md:space-y-4">
               <li>
-                <Link
-                  to="https://vephla.com"
+                <a
+                  href="https://vephla.com"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="https://vephla.com/about"
+                <a
+                  href="https://vephla.com/about"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -37,12 +37,12 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://vephla.com/about"
+                <a
+                  href="https://vephla.com/about"
                   className="text-gray-300 hover:text-white transition-colors text-sm md:text-base"
                 >
                   Resources
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

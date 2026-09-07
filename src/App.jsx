@@ -30,6 +30,7 @@ import TransitionIntoTechArticle from "./components/articles/TransitionIntoTechA
 import VSCodeExtensionsArticle from "./components/articles/VSCodeExtensionsArticle";
 import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
+import ProjectManagementPortfolioArticle from "./components/articles/ProjectManagementPortfolioArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
 import { TermsAndService } from "./components/Terms";
@@ -200,6 +201,11 @@ function MVPMistakesArticleWithTitle() {
   return <MVPMistakesArticle />;
 }
 
+function ProjectManagementPortfolioArticleWithTitle() {
+  usePageTitle("Project Management Portfolio | Vephla Group ®");
+  return <ProjectManagementPortfolioArticle />;
+}
+
 function NotFoundWithTitle() {
   usePageTitle("Page Not Found | Vephla Group ®");
   return (
@@ -317,6 +323,10 @@ function App() {
           <Route
             path="/mvp-mistakes"
             element={<MVPMistakesArticleWithTitle />}
+          />
+          <Route
+            path="/project-management-portfolio"
+            element={<ProjectManagementPortfolioArticleWithTitle />}
           />
 
           {/* Catch-all for 404 */}

@@ -1,7 +1,19 @@
-import { ChevronLeft } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import TechNewsCarousel from "./TechNewsCarousel";
 import { AnimatedPage } from "../AnimatedPage";
+
+const XIcon = ({ className }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zm-1.61 19.514h2.039L6.486 3.24H4.298z" />
+  </svg>
+);
 
 const ArticleLayout = ({
   title,
@@ -18,6 +30,54 @@ const ArticleLayout = ({
     { label: "Trends", href: "/" },
   ],
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    const url = window.location.href;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        // Fallback for older browsers / non-secure contexts
+        const textArea = document.createElement("textarea");
+        textArea.value = url;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy link:", err);
+    }
+  };
+
+  const handleShare = (platform) => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(title || "");
+    let shareUrl = "";
+
+    switch (platform) {
+      case "x":
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        break;
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        break;
+      default:
+        return;
+    }
+
+    window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=600");
+  };
+
   return (
     <AnimatedPage>
       <div className="min-h-screen bg-background mt-24">
@@ -93,17 +153,32 @@ const ArticleLayout = ({
                   <p className="text-gray-400">{authorTitle}</p>
                 </div>
                 <div className="ml-auto flex space-x-4">
-                  <button className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors">
-                    Copy link
+                  <button
+                    onClick={handleCopyLink}
+                    className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors"
+                  >
+                    {copied ? "Copied!" : "Copy link"}
                   </button>
-                  <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors">
-                    <span className="text-white">𝕏</span>
+                  <button
+                    onClick={() => handleShare("x")}
+                    aria-label="Share on X"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
+                  >
+                    <XIcon className="w-4 h-4 text-white" />
                   </button>
-                  <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors">
-                    <span className="text-white">f</span>
+                  <button
+                    onClick={() => handleShare("facebook")}
+                    aria-label="Share on Facebook"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
+                  >
+                    <Facebook className="w-4 h-4 text-white" />
                   </button>
-                  <button className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors">
-                    <span className="text-white">in</span>
+                  <button
+                    onClick={() => handleShare("linkedin")}
+                    aria-label="Share on LinkedIn"
+                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4 text-white" />
                   </button>
                 </div>
               </div>

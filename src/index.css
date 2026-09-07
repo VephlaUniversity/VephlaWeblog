@@ -1,7 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
 * {
   scroll-behavior: smooth;
 }
 body {
   background: #0d0d0d;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
