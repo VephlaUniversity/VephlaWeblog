@@ -7,7 +7,17 @@ const TutorialsBlog = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const articles = [
-      {
+    {
+      id: 5,
+      category: "Tutorials",
+      title: "How to Run Your First Retrospective Meeting",
+      description:
+        "A practical step-by-step guide for new Project Managers, including questions to ask your team and how to turn feedback into meaningful action.",
+      image: "https://images.unsplash.com/photo-1676277757211-ebd7fdeb3d5b?w=1200&h=600&fit=crop&crop=center",
+      categoryColor: "text-cyan-400",
+      link: "/retrospective-meeting",
+    },
+    {
       id: 4,
       category: "Tutorials",
       title: "How to Set Up a Project Management Portfolio That Gets ...",
@@ -130,7 +140,7 @@ const TutorialsBlog = () => {
               </Link>
               <span className="text-gray-600">›</span>
               <Link
-                to="/news-blog"
+                to="/"
                 className="hover:text-white transition-colors duration-200"
               >
                 Blog

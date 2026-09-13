@@ -31,6 +31,7 @@ import VSCodeExtensionsArticle from "./components/articles/VSCodeExtensionsArtic
 import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
 import ProjectManagementPortfolioArticle from "./components/articles/ProjectManagementPortfolioArticle";
+import RetrospectiveMeetingArticle from "./components/articles/RetrospectiveMeetingArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
 import { TermsAndService } from "./components/Terms";
@@ -206,6 +207,11 @@ function ProjectManagementPortfolioArticleWithTitle() {
   return <ProjectManagementPortfolioArticle />;
 }
 
+function RetrospectiveMeetingArticleWithTitle() {
+  usePageTitle("Retrospective Meeting | Vephla Group ®");
+  return <RetrospectiveMeetingArticle />;
+}
+
 function NotFoundWithTitle() {
   usePageTitle("Page Not Found | Vephla Group ®");
   return (
@@ -327,6 +333,10 @@ function App() {
           <Route
             path="/project-management-portfolio"
             element={<ProjectManagementPortfolioArticleWithTitle />}
+          />
+          <Route
+            path="/retrospective-meeting"
+            element={<RetrospectiveMeetingArticleWithTitle />}
           />
 
           {/* Catch-all for 404 */}
