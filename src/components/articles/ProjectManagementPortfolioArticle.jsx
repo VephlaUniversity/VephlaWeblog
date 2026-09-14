@@ -783,7 +783,14 @@ const ProjectManagementPortfolioArticle = () => {
           A portfolio is strongest when it reflects real knowledge and
           practical experience. If you are interested in learning Project
           Management and developing the skills needed to manage projects
-          effectively, visit Vephla University to explore Project Management
+          effectively, visit <a
+    href="https://vephlauni.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white underline hover:text-gray-200"
+  >
+    Vephla University
+  </a>{" "} to explore Project Management
           learning opportunities.
         </p>
         <p className="text-gray-300 text-lg leading-relaxed">

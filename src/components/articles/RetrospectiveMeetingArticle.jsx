@@ -40,7 +40,14 @@ const RetrospectiveMeetingArticle = () => {
           someone to blame when something goes wrong. Instead, the goal is to
           understand what happened, identify what worked, learn from what did
           not, and agree on practical improvements for the next phase of
-          work. If you want to learn more about this, visit Vephla University
+          work. If you want to learn more about this, visit <a
+    href="https://vephlauni.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white underline hover:text-gray-200"
+  >
+    Vephla University
+  </a>{" "}
           to learn more.
         </p>
       </section>
@@ -980,7 +987,14 @@ const RetrospectiveMeetingArticle = () => {
           develop these skills.
         </p>
         <p className="text-gray-300 text-lg leading-relaxed">
-          Looking to learn Project Management? Visit Vephla University to
+          Looking to learn Project Management? Visit <a
+    href="https://vephlauni.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white underline hover:text-gray-200"
+  >
+    Vephla University
+  </a>{" "} to
           learn more.
         </p>
       </section>
