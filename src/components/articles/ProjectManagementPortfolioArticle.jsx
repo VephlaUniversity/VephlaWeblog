@@ -12,9 +12,8 @@ const ProjectManagementPortfolioArticle = () => {
       title="How to Set Up a Project Management Portfolio That Gets You Noticed"
       readTime="14 mins read"
       date="September 7th, 2026"
-      author="David Chen"
-      authorTitle="Project Management Mentor"
-      authorImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+      author="V. Sawyerr"
+      authorTitle="Project and Community Manager, Vephla Group"
       heroImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop&crop=center"
       breadcrumbs={breadcrumbs}
     >

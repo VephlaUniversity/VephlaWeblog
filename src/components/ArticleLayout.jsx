@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, Facebook, Linkedin } from "lucide-react";
+import { ChevronLeft, Facebook, Linkedin, UserCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import TechNewsCarousel from "./TechNewsCarousel";
 import { AnimatedPage } from "../AnimatedPage";
@@ -143,11 +143,13 @@ const ArticleLayout = ({
           <div className="max-w-4xl mx-auto">
             <div className="glass-card p-8 rounded-2xl">
               <div className="flex items-center space-x-4">
-                <img
-                  src={authorImage}
-                  alt={author}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
+                {authorImage ? (
+                  <img
+                    src={authorImage}
+                    alt={author}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                ) :  <UserCircle className="w-16 h-16 text-gray-400" />}
                 <div>
                   <h3 className="text-white font-semibold text-lg">{author}</h3>
                   <p className="text-gray-400">{authorTitle}</p>

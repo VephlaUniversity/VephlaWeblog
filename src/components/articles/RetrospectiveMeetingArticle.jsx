@@ -12,9 +12,8 @@ const RetrospectiveMeetingArticle = () => {
       title="How to Run Your First Retrospective Meeting"
       readTime="16 mins read"
       date="June 22nd, 2025"
-      author="David Chen"
-      authorTitle="Project Management Mentor"
-      authorImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+      author="V. Sawyerr"
+      authorTitle="Project and Community Manager, Vephla Group"
       heroImage="https://images.unsplash.com/photo-1676277757211-ebd7fdeb3d5b?w=1200&h=600&fit=crop&crop=center"
       breadcrumbs={breadcrumbs}
     >
