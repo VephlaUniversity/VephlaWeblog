@@ -32,6 +32,8 @@ import NodeJSAPIArticle from "./components/articles/NodeJSAPIArticle";
 import MVPMistakesArticle from "./components/articles/MVPMistakesArticle";
 import ProjectManagementPortfolioArticle from "./components/articles/ProjectManagementPortfolioArticle";
 import RetrospectiveMeetingArticle from "./components/articles/RetrospectiveMeetingArticle";
+import ProjectManagerDayInLifeArticle from "./components/articles/ProjectManagerDayInLifeArticle";
+import BecomeProjectManagerNoExperienceArticle from "./components/articles/BecomeProjectManagerNoExperienceArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
 import { TermsAndService } from "./components/Terms";
@@ -212,6 +214,18 @@ function RetrospectiveMeetingArticleWithTitle() {
   return <RetrospectiveMeetingArticle />;
 }
 
+function ProjectManagerDayInLifeArticleWithTitle() {
+  usePageTitle("What Does a Project Manager Actually Do | Vephla Group ®");
+  return <ProjectManagerDayInLifeArticle />;
+}
+
+function BecomeProjectManagerNoExperienceArticleWithTitle() {
+  usePageTitle(
+    "How to Become a Project Manager With No Experience | Vephla Group ®"
+  );
+  return <BecomeProjectManagerNoExperienceArticle />;
+}
+
 function NotFoundWithTitle() {
   usePageTitle("Page Not Found | Vephla Group ®");
   return (
@@ -337,6 +351,14 @@ function App() {
           <Route
             path="/retrospective-meeting"
             element={<RetrospectiveMeetingArticleWithTitle />}
+          />
+          <Route
+            path="/what-does-a-project-manager-actually-do"
+            element={<ProjectManagerDayInLifeArticleWithTitle />}
+          />
+          <Route
+            path="/become-a-project-manager-with-no-experience"
+            element={<BecomeProjectManagerNoExperienceArticleWithTitle />}
           />
 
           {/* Catch-all for 404 */}
