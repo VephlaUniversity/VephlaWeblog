@@ -803,7 +803,7 @@ const ProjectManagerDayInLifeArticle = () => {
             href="https://www.vephlauni.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-400 hover:text-green-300 underline"
+            className="text-gray-300 hover:text-white underline"
           >
             Vephla University
           </a>{" "}
