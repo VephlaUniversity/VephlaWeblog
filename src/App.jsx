@@ -34,6 +34,7 @@ import ProjectManagementPortfolioArticle from "./components/articles/ProjectMana
 import RetrospectiveMeetingArticle from "./components/articles/RetrospectiveMeetingArticle";
 import ProjectManagerDayInLifeArticle from "./components/articles/ProjectManagerDayInLifeArticle";
 import BecomeProjectManagerNoExperienceArticle from "./components/articles/BecomeProjectManagerNoExperienceArticle";
+import PgAdminInstallationGuideArticle from "./components/articles/PgAdminInstallationGuideArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
 import { TermsAndService } from "./components/Terms";
@@ -221,9 +222,14 @@ function ProjectManagerDayInLifeArticleWithTitle() {
 
 function BecomeProjectManagerNoExperienceArticleWithTitle() {
   usePageTitle(
-    "How to Become a Project Manager With No Experience | Vephla Group ®"
+    "How to Become a Project Manager With No Experience | Vephla Group ®",
   );
   return <BecomeProjectManagerNoExperienceArticle />;
+}
+
+function PgAdminInstallationGuideArticleWithTitle() {
+  usePageTitle("How to Install pgAdmin 4 | Vephla Group ®");
+  return <PgAdminInstallationGuideArticle />;
 }
 
 function NotFoundWithTitle() {
@@ -359,6 +365,10 @@ function App() {
           <Route
             path="/become-a-project-manager-with-no-experience"
             element={<BecomeProjectManagerNoExperienceArticleWithTitle />}
+          />
+          <Route
+            path="/how-to-install-pgadmin-4"
+            element={<PgAdminInstallationGuideArticleWithTitle />}
           />
 
           {/* Catch-all for 404 */}

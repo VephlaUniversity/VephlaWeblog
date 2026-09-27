@@ -173,7 +173,7 @@ const TechNewsCarousel = () => {
             }`}
           >
             {i}
-          </button>
+          </button>,
         );
       }
     } else {
@@ -189,7 +189,7 @@ const TechNewsCarousel = () => {
           }`}
         >
           1
-        </button>
+        </button>,
       );
 
       // Show dots if current page is far from start
@@ -197,7 +197,7 @@ const TechNewsCarousel = () => {
         pages.push(
           <span key="dots-start" className="text-gray-400 px-2">
             ...
-          </span>
+          </span>,
         );
       }
 
@@ -218,7 +218,7 @@ const TechNewsCarousel = () => {
               }`}
             >
               {i}
-            </button>
+            </button>,
           );
         }
       }
@@ -228,7 +228,7 @@ const TechNewsCarousel = () => {
         pages.push(
           <span key="dots-end" className="text-gray-400 px-2">
             ...
-          </span>
+          </span>,
         );
       }
 
@@ -245,7 +245,7 @@ const TechNewsCarousel = () => {
             }`}
           >
             {totalPages}
-          </button>
+          </button>,
         );
       }
     }
@@ -259,9 +259,11 @@ const TechNewsCarousel = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold">More from Tech News</h1>
-            <Link to="/">
-              <button className="text-red-500 hover:text-red-400 transition-colors cursor-pointer">
+            <h1 className="text-xl md:text-3xl font-bold">
+              More from Tech News
+            </h1>
+            <Link to="/news-blog">
+              <button className="text-red-500 hover:text-red-400 text-[10px] md:text-xl transition-colors cursor-pointer">
                 View all
               </button>
             </Link>
@@ -314,7 +316,6 @@ const TechNewsCarousel = () => {
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
-              <span>Previous</span>
             </button>
 
             <div className="flex items-center space-x-2">
@@ -325,7 +326,6 @@ const TechNewsCarousel = () => {
               onClick={goToNext}
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
             >
-              <span>Next</span>
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>

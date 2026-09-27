@@ -142,24 +142,27 @@ const ArticleLayout = ({
         <footer className="px-6 pb-20">
           <div className="max-w-4xl mx-auto">
             <div className="glass-card p-8 rounded-2xl">
-              <div className="flex items-center space-x-4">
-                {authorImage ? (
-                  <img
-                    src={authorImage}
-                    alt={author}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
-                ) :  <UserCircle className="w-16 h-16 text-gray-400" />}
+              <div className="flex items-center flex-col md:flex-row space-x-4">
                 <div>
+                  {authorImage ? (
+                    <img
+                      src={authorImage}
+                      alt={author}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                  ) : (
+                    <UserCircle className="w-16 h-16 text-gray-400" />
+                  )}
+
                   <h3 className="text-white font-semibold text-lg">{author}</h3>
                   <p className="text-gray-400">{authorTitle}</p>
                 </div>
-                <div className="ml-auto flex space-x-4">
+                <div className="ml-auto flex space-x-4 mt-3.5 md:mt-0">
                   <button
                     onClick={handleCopyLink}
-                    className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors"
+                    className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white  rounded-lg transition-colors"
                   >
-                    {copied ? "Copied!" : "Copy link"}
+                    {copied ? "Copied!" : "Copy"}
                   </button>
                   <button
                     onClick={() => handleShare("x")}
