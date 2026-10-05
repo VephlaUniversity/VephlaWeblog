@@ -35,6 +35,7 @@ import RetrospectiveMeetingArticle from "./components/articles/RetrospectiveMeet
 import ProjectManagerDayInLifeArticle from "./components/articles/ProjectManagerDayInLifeArticle";
 import BecomeProjectManagerNoExperienceArticle from "./components/articles/BecomeProjectManagerNoExperienceArticle";
 import PgAdminInstallationGuideArticle from "./components/articles/PgAdminInstallationGuideArticle";
+import AnacondaInstallationGuideArticle from "./components/articles/AnacondaInstallationGuideArticle";
 import { Weblog } from "./components/Weblog";
 import { AnimatePresence } from "framer-motion";
 import { TermsAndService } from "./components/Terms";
@@ -232,6 +233,11 @@ function PgAdminInstallationGuideArticleWithTitle() {
   return <PgAdminInstallationGuideArticle />;
 }
 
+function AnacondaInstallationGuideArticleWithTitle() {
+  usePageTitle("Anaconda Installation Guide | Vephla Group ®");
+  return <AnacondaInstallationGuideArticle />;
+}
+
 function NotFoundWithTitle() {
   usePageTitle("Page Not Found | Vephla Group ®");
   return (
@@ -369,6 +375,10 @@ function App() {
           <Route
             path="/how-to-install-pgadmin-4"
             element={<PgAdminInstallationGuideArticleWithTitle />}
+          />
+          <Route
+            path="/anaconda-installation-guide"
+            element={<AnacondaInstallationGuideArticleWithTitle />}
           />
 
           {/* Catch-all for 404 */}

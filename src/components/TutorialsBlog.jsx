@@ -8,6 +8,16 @@ const TutorialsBlog = () => {
 
   const articles = [
     {
+      id: 9,
+      category: "Tutorials",
+      title: "Anaconda Installation Guide: Set Up Python and Jupyter Notebook",
+      description:
+        "Install Anaconda, open Jupyter, create your first notebook, and turn your first Python practice into a portfolio project.",
+      image: "/ana-2.png",
+      categoryColor: "text-cyan-400",
+      link: "/anaconda-installation-guide",
+    },
+    {
       id: 8,
       category: "Tutorials",
       title:
@@ -24,8 +34,7 @@ const TutorialsBlog = () => {
       title: "How to Become a Project Manager With No Experience",
       description:
         "A practical beginner's guide to building Project Management skills, gaining experience, creating a portfolio, and getting your first opportunity.",
-      image:
-        "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1200&h=600&fit=crop&crop=center",
+      image: "/9.png",
       categoryColor: "text-cyan-400",
       link: "/become-a-project-manager-with-no-experience",
     },
@@ -36,8 +45,7 @@ const TutorialsBlog = () => {
         "What Does a Project Manager Actually Do? — A Day-in-the-Life Breakdown",
       description:
         "From planning and team coordination to managing risks, solving problems, and keeping projects moving, here's what a Project Manager actually does on a typical day.",
-      image:
-        "https://images.unsplash.com/photo-1558478551-16a013a18bd8?w=1200&h=600&fit=crop&crop=center",
+      image: "/9.png",
       categoryColor: "text-cyan-400",
       link: "/what-does-a-project-manager-actually-do",
     },
@@ -47,8 +55,7 @@ const TutorialsBlog = () => {
       title: "How to Run Your First Retrospective Meeting",
       description:
         "A practical step-by-step guide for new Project Managers, including questions to ask your team and how to turn feedback into meaningful action.",
-      image:
-        "https://images.unsplash.com/photo-1676277757211-ebd7fdeb3d5b?w=1200&h=600&fit=crop&crop=center",
+      image: "/9.png",
       categoryColor: "text-cyan-400",
       link: "/retrospective-meeting",
     },
@@ -58,8 +65,7 @@ const TutorialsBlog = () => {
       title: "How to Set Up a Project Management Portfolio That Gets ...",
       description:
         "Your CV tells people where you've worked. Your portfolio shows them how you actually think, plan, and deliver projects. Here's how to build...",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop&crop=center",
+      image: "/9.png",
       categoryColor: "text-cyan-400",
       link: "/project-management-portfolio",
     },
