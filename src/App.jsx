@@ -34,6 +34,7 @@ import ProjectManagementPortfolioArticle from "./components/articles/ProjectMana
 import RetrospectiveMeetingArticle from "./components/articles/RetrospectiveMeetingArticle";
 import ProjectManagerDayInLifeArticle from "./components/articles/ProjectManagerDayInLifeArticle";
 import BecomeProjectManagerNoExperienceArticle from "./components/articles/BecomeProjectManagerNoExperienceArticle";
+import ProjectManagerInterviewQuestionsArticle from "./components/articles/ProjectManagerInterviewQuestionsArticle";
 import PgAdminInstallationGuideArticle from "./components/articles/PgAdminInstallationGuideArticle";
 import AnacondaInstallationGuideArticle from "./components/articles/AnacondaInstallationGuideArticle";
 import { Weblog } from "./components/Weblog";
@@ -228,6 +229,13 @@ function BecomeProjectManagerNoExperienceArticleWithTitle() {
   return <BecomeProjectManagerNoExperienceArticle />;
 }
 
+function ProjectManagerInterviewQuestionsArticleWithTitle() {
+  usePageTitle(
+    "Common Project Manager Interview Questions and Answers (2026) | Vephla Group ®",
+  );
+  return <ProjectManagerInterviewQuestionsArticle />;
+}
+
 function PgAdminInstallationGuideArticleWithTitle() {
   usePageTitle("How to Install pgAdmin 4 | Vephla Group ®");
   return <PgAdminInstallationGuideArticle />;
@@ -371,6 +379,10 @@ function App() {
           <Route
             path="/become-a-project-manager-with-no-experience"
             element={<BecomeProjectManagerNoExperienceArticleWithTitle />}
+          />
+          <Route
+            path="/common-project-manager-interview-questions-and-answers-2026"
+            element={<ProjectManagerInterviewQuestionsArticleWithTitle />}
           />
           <Route
             path="/how-to-install-pgadmin-4"
